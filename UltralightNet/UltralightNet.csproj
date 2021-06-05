@@ -8,6 +8,7 @@
 		<IsPackable>true</IsPackable>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
+		<RepositoryUrl>https://github.com/nesk/UltralightNet</RepositoryUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>

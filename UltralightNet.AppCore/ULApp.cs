@@ -27,6 +27,9 @@ namespace UltralightNet.AppCore
 		public static extern IntPtr ulAppGetRenderer(IntPtr app);
 
 		[DllImport("AppCore")]
+		public static extern IntPtr ulAppGetViewTexturePointer(IntPtr app, IntPtr view);
+
+		[DllImport("AppCore")]
 		public static extern void ulAppRun(IntPtr app);
 
 		[DllImport("AppCore")]
@@ -71,6 +74,11 @@ namespace UltralightNet.AppCore
 		public ULMonitor MainMonitor => new(AppCoreMethods.ulAppGetMainMonitor(Ptr));
 
 		public Renderer Renderer => new(AppCoreMethods.ulAppGetRenderer(Ptr));
+
+		public IntPtr GetViewTexturePointer(View view)
+		{
+			return AppCoreMethods.ulAppGetViewTexturePointer(Ptr, view.Ptr);
+		}
 
 		public void Run() => AppCoreMethods.ulAppRun(Ptr);
 		public void Quit() => AppCoreMethods.ulAppQuit(Ptr);
